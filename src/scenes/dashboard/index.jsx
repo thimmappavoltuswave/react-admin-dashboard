@@ -12,6 +12,7 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import PieChart from "../../components/PieChart";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -130,38 +131,7 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Revenue Generated
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                $59,342.32
-              </Typography>
-            </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-          <Box height="250px" m="-20px 0 0 0">
+          <Box height="850px" m="-20px 0 0 0">
             <LineChart isDashboard={true} />
           </Box>
         </Box>
@@ -223,24 +193,14 @@ const Dashboard = () => {
           backgroundColor={colors.primary[400]}
           p="30px"
         >
-          <Typography variant="h5" fontWeight="600">
-            Campaign
-          </Typography>
+        
           <Box
             display="flex"
             flexDirection="column"
             alignItems="center"
-            mt="25px"
+            mt="-40px"
           >
-            <ProgressCircle size="125" />
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-              $48,352 revenue generated
-            </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+           <PieChart/>
           </Box>
         </Box>
         <Box
@@ -253,7 +213,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Sales Quantity
+            Electric Vehicle Count by Make and Model Year
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
